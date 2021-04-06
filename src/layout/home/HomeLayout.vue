@@ -1,12 +1,20 @@
 <template>
-    <div id="homeLayout">
-        <b-container fluid>
+    <perfect-scrollbar>
+        <div class="home-layout">
+            <HomeHeader />
             <slot />
-        </b-container>
-    </div>
+            <HomeFooter />
+        </div>
+    </perfect-scrollbar>
 </template>
 <script>
+import HomeHeader from './HomeHeader';
+import HomeFooter from './HomeFooter';
+
 export default {
-    name: "HomeLayout"
+    name: "HomeLayout",
+    components: {
+        HomeHeader, HomeFooter
+    }
 }
 </script>

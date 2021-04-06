@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const VAL_HOST_URL = "http://localhost:8080";
+const VAL_HOST_URL = process.env.NODE_ENV === 'development' ? '' : "http://localhost:8080";
 
 export const axiosGet = async (url, params) => {
   return await axios

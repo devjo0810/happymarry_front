@@ -50,10 +50,7 @@
                 margin-left: auto;
                 @include flex-center;
                 .btn-link {
-                    margin-right: 10px;
-                    &:last-child {
-                        margin-right: 0;
-                    }
+                    @include list-margin-right(10px);
                     button {
                         transition: 0.3s;
                     }

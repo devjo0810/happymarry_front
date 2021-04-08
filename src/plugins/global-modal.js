@@ -8,20 +8,19 @@ export default {
         });
         document.body.appendChild(modalInstance.$el);
 
-        Vue.prototype.$alert = ({title, message, closeCallback}) => {
+        Vue.prototype.$alert = ({title, message, callback}) => {
             modalInstance.isShow = true;
             modalInstance.type = 'alert';
-            modalInstance.title = title;
+            modalInstance.title = title || '안내';
             modalInstance.message = message;
-            modalInstance.closeCallback = closeCallback;
+            modalInstance.callback = callback;
         }
-        Vue.prototype.$confirm = ({title, message, confirmCallback, closeCallback}) => {
+        Vue.prototype.$confirm = ({title, message, callback}) => {
             modalInstance.isShow = true;
             modalInstance.type = 'confirm';
-            modalInstance.title = title;
+            modalInstance.title = title || '안내';
             modalInstance.message = message;
-            modalInstance.confirmCallback = confirmCallback;
-            modalInstance.closeCallback = closeCallback;
+            modalInstance.callback = callback;
         }
     }
 }

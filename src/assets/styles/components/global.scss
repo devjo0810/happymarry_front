@@ -11,7 +11,6 @@
 
     .modal-wrap {
         width: 360px;
-        height: 320px;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 1px 1px 6px #000;
@@ -19,10 +18,21 @@
 
         .header {
             font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 15px;
         }
 
         .body {
+            margin-bottom: 15px;
+            min-height: 30px
+        }
 
+        .footer {
+            @include flex-end;
+            button {
+                @include list-margin-right(5px);
+            }
         }
     }
 }

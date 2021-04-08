@@ -6,11 +6,11 @@
                 <div class="body">{{ message }}</div>
                 <div class="footer">
                     <template v-if="type==='alert'">
-                        <b-button @click="close">확인</b-button>
+                        <b-button @click="close(true)">확인</b-button>
                     </template>
                     <template v-if="type==='confirm'">
-                        <b-button @click="close">취소</b-button>
-                        <b-button @click="confirm">확인</b-button>
+                        <b-button variant="danger" @click="close(false)">취소</b-button>
+                        <b-button variant="primary" @click="close(true)">확인</b-button>
                     </template>
                 </div>
             </div>
@@ -25,19 +25,12 @@ export default {
         title: '알림',
         message: '',
         type: 'alert',
-        confirmCallback: null,
-        closeCallback: null
+        callback: null,
     }),
     methods: {
-        confirm() {
-            console.log('show');
+        close(flag) {
             this.isShow = false;
-            if(this.confirmCallback) this.confirmCallback();
-        },
-        close() {
-            console.log('close');
-            this.isShow = false;
-            if(this.closeCallback) this.closeCallback();
+            if(this.callback) this.callback(flag);
         }
     }
 }

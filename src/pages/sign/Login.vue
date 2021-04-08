@@ -50,14 +50,11 @@ export default {
   methods: {
     login() {
       this.$confirm({
-        title: '안내',
         message: '로그인',
-        confirmCallback() {
-          console.log('로그인 확인');
+        callback(flag) {
+          if(flag) console.log('로그인 확인');
+          else console.log('로그인 취소');
         },
-        closeCallback() {
-          console.log('로그인 취소');
-        }
       });
     }
   }

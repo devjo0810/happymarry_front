@@ -2,11 +2,17 @@
 
 ## node 확인
 nodejs 있을 경우 불필요
+
 nvm 설치(setup) https://github.com/coreybutler/nvm-windows/releases
+
 nvm install v14.15.4
+
 nvm use 14.15.4
+
 node -v (노드 버전 확인)
+
 npm -v (npm 버전 확인)
+
 nvm ls (nvm 목록 확인)
 
 ## 프로젝트 설정 방법

@@ -1,7 +1,11 @@
 @import "./common";
+
 @import "./utility/font";
 @import "./utility/layout";
 @import "./utility/page";
+@import "./utility/animation";
+
+@import "./components/global.scss";
 * {
     box-sizing: border-box;
 }

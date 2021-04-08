@@ -28,7 +28,7 @@
         </b-form-group>
         <b-form-checkbox v-model="form.check">Remember Email</b-form-checkbox>
         <div class="btn-wrap">
-          <b-button variant="primary" class="block">LOGIN</b-button>
+          <b-button variant="primary" class="block" @click="login">LOGIN</b-button>
           <router-link to="/signup">
             <b-button variant="info" class="block">SIGNUP</b-button>
           </router-link>
@@ -47,5 +47,19 @@ export default {
       check: false,
     },
   }),
+  methods: {
+    login() {
+      this.$confirm({
+        title: '안내',
+        message: '로그인',
+        confirmCallback() {
+          console.log('로그인 확인');
+        },
+        closeCallback() {
+          console.log('로그인 취소');
+        }
+      });
+    }
+  }
 };
 </script>

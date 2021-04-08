@@ -7,8 +7,10 @@ import store from "./store";
 import "./plugins/fontawesome";
 import "./plugins/bootstrap-vue";
 import "./plugins/perfect-scrollbar";
+import GlobalModal from './plugins/global-modal';
 import "./assets/styles/main.scss";
 
+Vue.use(GlobalModal);
 Vue.config.productionTip = false;
 
 new Vue({

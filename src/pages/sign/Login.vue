@@ -18,8 +18,6 @@
             @keydown.enter="login"
           ></b-form-input>
           <p class="err-msg" v-if="emailError">{{ emailError }}</p>
-          <!-- <p class="err-msg" v-if="!$v.email.required">이메일을 입력해주세요.</p>
-          <p class="err-msg" v-if="!$v.email.email">이메일 형식으로 작성해주세요.</p> -->
         </b-form-group>
         <b-form-group label="Password" label-for="input-password">
           <b-form-input

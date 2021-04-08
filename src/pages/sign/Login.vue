@@ -5,10 +5,10 @@
           <router-link to="/" >
             <img src="@/assets/images/only_logo.png" alt="logo" />
           </router-link>
-        <h4>LOGIN</h4>
+        <h4>로그인</h4>
       </div>
       <b-form class="login-form">
-        <b-form-group label="Email" label-for="input-email">
+        <b-form-group label="이메일" label-for="input-email">
           <b-form-input
             id="input-email"
             v-model.trim="email"
@@ -19,7 +19,7 @@
           ></b-form-input>
           <p class="err-msg" v-if="emailError">{{ emailError }}</p>
         </b-form-group>
-        <b-form-group label="Password" label-for="input-password">
+        <b-form-group label="비밀번호" label-for="input-password">
           <b-form-input
             id="input-password"
             v-model.trim="password"

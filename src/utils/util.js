@@ -90,8 +90,20 @@ export const isPassword = (pwd) => {
     return regExp.test(pwd)
 }
 
-// Input Type Email
+// 이메일 정규표현식
 export const isEmail = (email) => {
     const regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     return regExp.test(email);
+}
+
+// 휴대전화 정규표현식
+export const isTel = (tel) => {
+    const regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+    return regExp.test(tel);
+}
+
+// 닉네임 정규표현식
+export const isNick = (nick) => {
+    const regExp = /^[0-9a-zA-Z-_가-힣]{3,10}/i;
+    return regExp.test(nick);
 }

@@ -11,10 +11,10 @@
                     <router-link to="/invitation">청첩장</router-link>
                 </li>
                 <li>
-                    <router-link to="/invitation">공지사항</router-link>
+                    <router-link to="/notice">공지사항</router-link>
                 </li>
                 <li>
-                    <router-link to="/invitation">문의사항</router-link>
+                    <router-link to="/question">문의사항</router-link>
                 </li>
             </ul>
         </section>

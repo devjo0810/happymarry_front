@@ -1,12 +1,10 @@
 @import "./common";
-
 @import "./utility/mixin";
 @import "./utility/font";
 @import "./utility/layout";
 @import "./utility/page";
 @import "./utility/animation";
-
-@import "./components/global.scss";
+@import "./utility/icon";
 * {
     box-sizing: border-box;
 }

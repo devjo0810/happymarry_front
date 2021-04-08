@@ -15,7 +15,7 @@ node -v (노드 버전 확인)
 npm -v (npm 버전 확인)
 
 nvm ls (nvm 목록 확인)
-   
+***
 ## 프로젝트 설정 방법
 ### npm 사용시
 ```
@@ -25,7 +25,7 @@ npm install
 ```
 yarn install
 ```
-   
+***
 ## 개발서버 실행 방법
 ### npm 사용시
 ```

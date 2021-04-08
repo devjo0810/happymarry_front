@@ -5,9 +5,9 @@ nodejs 있을 경우 불필요
 
 nvm 설치(setup) https://github.com/coreybutler/nvm-windows/releases
 
-nvm install v14.15.4
+* nvm install v14.15.4
 
-nvm use 14.15.4
+* nvm use 14.15.4
 
 node -v (노드 버전 확인)
 

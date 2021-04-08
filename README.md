@@ -14,7 +14,7 @@ node -v (노드 버전 확인)
 
 npm -v (npm 버전 확인)
 
-nvm ls (nvm 목록 확인)
+nvm ls (nvm에 설치된 nodejs 버전 목록 확인)
 ***
 ## 프로젝트 설정 방법
 ### npm 사용시

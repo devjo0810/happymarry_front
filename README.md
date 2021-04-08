@@ -1,5 +1,5 @@
 # happymarry_front
-<img src="/src/assets/images/full_logo.jpg" width="40%" height="30%" title="메인로고" alt="main_logo"></img>
+<img src="/src/assets/images/full_logo.png" width="40%" height="30%" title="메인로고" alt="main_logo"></img>
 
 ## node 확인
 nodejs 있을 경우 불필요

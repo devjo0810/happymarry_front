@@ -35,3 +35,6 @@ npm run dev
 ```
 yarn dev
 ```
+
+## App running at
+http://localhost:3000

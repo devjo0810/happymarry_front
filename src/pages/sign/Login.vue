@@ -11,22 +11,28 @@
         <b-form-group label="Email" label-for="input-email">
           <b-form-input
             id="input-email"
-            v-model="form.email"
+            v-model.trim="email"
             type="email"
             placeholder="Enter email"
             required
+            @keydown.enter="login"
           ></b-form-input>
+          <p class="err-msg" v-if="emailError">{{ emailError }}</p>
+          <!-- <p class="err-msg" v-if="!$v.email.required">이메일을 입력해주세요.</p>
+          <p class="err-msg" v-if="!$v.email.email">이메일 형식으로 작성해주세요.</p> -->
         </b-form-group>
         <b-form-group label="Password" label-for="input-password">
           <b-form-input
             id="input-password"
-            v-model="form.password"
+            v-model.trim="password"
             type="password"
             placeholder="Enter Password"
             required
+            @keydown.enter="login"
           ></b-form-input>
+          <p class="err-msg" v-if="pwdError">{{ pwdError }}</p>
         </b-form-group>
-        <b-form-checkbox v-model="form.check">Remember Email</b-form-checkbox>
+        <b-form-checkbox v-model="isRemember">Remember Email</b-form-checkbox>
         <div class="btn-wrap">
           <b-button variant="primary" class="block" @click="login">LOGIN</b-button>
           <router-link to="/signup">
@@ -38,25 +44,60 @@
   </div>
 </template>
 <script>
+import { isEmail } from '@/utils/util';
+import { getLocalStorage, setLocalStorage, delLocalStorage } from '@/utils/cookies';
+
 export default {
   name: "Login",
   data: () => ({
-    form: {
-      email: "",
-      password: "",
-      check: false,
-    },
+    email: "",
+    password: "",
+    isRemember: false,
+    emailError: null,
+    pwdError: null,
   }),
   methods: {
+    init() {
+      const localEmail = getLocalStorage('email');
+      if(localEmail) {
+        this.email = localEmail;
+        this.isRemember = true;
+      }
+    },
+    clearErrMsg() {
+      this.emailError = null;
+      this.pwdError = null;
+    },
     login() {
-      this.$confirm({
-        message: '로그인',
-        callback(flag) {
-          if(flag) console.log('로그인 확인');
-          else console.log('로그인 취소');
-        },
+      this.clearErrMsg();
+      const { email, password, isRemember } = this;
+      if(!email) {
+        this.emailError = '이메일을 입력해주세요.';
+        return;
+      }
+      if(!isEmail(email)) {
+        this.emailError = '이메일 형식이 올바르지 않습니다.';
+        return;
+      }
+      if(!password) {
+        this.pwdError = '비밀번호를 입력해주세요.';
+        return;
+      }
+      if(isRemember) setLocalStorage('email', email);
+      else delLocalStorage('email');
+
+      this.$spinStart();
+      setTimeout(() => {
+        this.$spinEnd();
+      }, 3000);
+      this.$alert('로그인 성공')
+      .then((flag) => {
+        console.log(flag);
       });
-    }
-  }
+    },
+  },
+  mounted() {
+    this.init();
+  },
 };
 </script>

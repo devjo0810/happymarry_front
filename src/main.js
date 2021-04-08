@@ -8,9 +8,11 @@ import "./plugins/fontawesome";
 import "./plugins/bootstrap-vue";
 import "./plugins/perfect-scrollbar";
 import GlobalModal from './plugins/global-modal';
+import GlobalSpinner from './plugins/global-spinner';
 import "./assets/styles/main.scss";
 
 Vue.use(GlobalModal);
+Vue.use(GlobalSpinner);
 Vue.config.productionTip = false;
 
 new Vue({

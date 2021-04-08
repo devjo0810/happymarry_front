@@ -6,7 +6,7 @@
                 <div class="body">{{ message }}</div>
                 <div class="footer">
                     <template v-if="type==='alert'">
-                        <b-button @click="close(true)">확인</b-button>
+                        <b-button variant="primary" @click="close(true)">확인</b-button>
                     </template>
                     <template v-if="type==='confirm'">
                         <b-button variant="danger" @click="close(false)">취소</b-button>
@@ -25,12 +25,18 @@ export default {
         title: '알림',
         message: '',
         type: 'alert',
-        callback: null,
+        promiseResolve: null,
+        promiseReject: null
     }),
     methods: {
         close(flag) {
-            this.isShow = false;
-            if(this.callback) this.callback(flag);
+            try {
+                this.isShow = false;
+                if(this.promiseResolve) this.promiseResolve(flag);
+            } catch(e) {
+                console.log(e);
+                if(this.promiseReject) this.promiseReject(e);
+            }
         }
     }
 }

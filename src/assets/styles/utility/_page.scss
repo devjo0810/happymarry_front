@@ -1,12 +1,21 @@
 .home-page {
     margin-top: $header-height;
-    height: 1200px;
     width: 100%;
     .home-carousel {
         text-shadow: 1px 1px 2px #333;
         img {
-            height: 520px;
+            height: calc(100vh - 56px);
             object-fit: cover;
+        }
+    }
+    .home-wrap {
+        position: relative;
+        height: 600px;
+        .section-1,
+        .section-2,
+        .section-3 {
+            position: relative;
+            z-index: 1;
         }
     }
 }
@@ -24,6 +33,7 @@
         background-color: #fff;
         box-shadow: 1px 1px 6px #000;
         padding: 20px;
+        z-index: 1;
         .title {
             @include flex-center;
             flex-direction: column;

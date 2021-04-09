@@ -39,14 +39,19 @@
         </div>
       </b-form>
     </div>
+    <BgAnimation />
   </div>
 </template>
 <script>
 import { isEmail } from '@/utils/util';
 import { getLocalStorage, setLocalStorage, delLocalStorage } from '@/utils/cookies';
+import BgAnimation from '@/components/common/BgAnimation';
 
 export default {
   name: "Login",
+  components: {
+    BgAnimation
+  },
   data: () => ({
     email: "",
     password: "",

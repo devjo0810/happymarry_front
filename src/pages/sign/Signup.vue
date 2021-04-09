@@ -55,23 +55,23 @@
             </b-col>
             <b-col>
               <b-form-input
-                v-model.trim="tel2"
+                v-model="tel2"
                 id="input-tel2"
                 type="text"
                 required
                 maxlength="4"
-                @keyup="onNumberHandler($event, tel2)"
+                @keyup="onNumberHandler('tel2')"
                 @keydown.enter="signup"
               ></b-form-input>
             </b-col>
             <b-col>
               <b-form-input
-                v-model.trim="tel3"
+                v-model="tel3"
                 id="input-tel3"
                 type="text"
                 required
                 maxlength="4"
-                @keyup="onNumberHandler($event, tel2)"
+                @keyup="onNumberHandler('tel3')"
                 @keydown.enter="signup"
               ></b-form-input>
             </b-col>
@@ -100,13 +100,18 @@
         </div>
       </b-form>
     </div>
+    <BgAnimation />
   </div>
 </template>
 <script>
-import { isEmail, isPassword, isTel, isNick, isNumber } from '@/utils/util.js';
+import { isEmail, isPassword, isTel, isNick } from '@/utils/util.js';
+import BgAnimation from '@/components/common/BgAnimation';
 
 export default {
   name: "Signup",
+  components: {
+    BgAnimation
+  },
   data: () => ({
       email: '',
       password: '', rePwd: '',
@@ -128,14 +133,6 @@ export default {
           const { tel1, tel2, tel3 } = this;
           return `${tel1}-${tel2}-${tel3}`;
       }
-  },
-  watch: {
-    tel2() {
-      return this.tel2 = this.tel2.replace(/[^0-9]/g, '');
-    },
-    tel3() {
-      return this.tel3 = this.tel3.replace(/[^0-9]/g, '');
-    },
   },
   methods: {
       signup() {
@@ -169,7 +166,8 @@ export default {
           this.nickError = '닉네임 형식이 올바르지 않습니다.';
           return;
         }
-
+        // email check
+        // nick check
       },
       clearErrMsg() {
         this.emailError = null;
@@ -178,8 +176,8 @@ export default {
         this.telError = null;
         this.nickError = null;
       },
-      onNumberHandler(e, msg) {
-        isNumber(e, msg);
+      onNumberHandler(telIdx) {
+        this[telIdx] = this[telIdx].replace(/[^0-9]/g, '');
       }
   }
 };

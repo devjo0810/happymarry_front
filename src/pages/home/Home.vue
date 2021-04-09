@@ -17,9 +17,21 @@
         :img-src="c.src"
       />
     </b-carousel>
-    <b-container>
-      <img alt="Vue logo" src="@/assets/images/logo.png" />
-    </b-container>
+    <div class="home-wrap">
+      <b-container class="section-1">
+        <img alt="Vue logo" src="@/assets/images/logo.png" />
+      </b-container>
+      <b-container class="section-2">
+        <img alt="Vue logo" src="@/assets/images/logo.png" />
+      </b-container>
+      <b-container class="section-3">
+        <img alt="Vue logo" src="@/assets/images/logo.png" />
+      </b-container>
+      <BgAnimation
+        :isBg="false"
+        :style="'position: absolute; left: 0; top: 0; z-index: 0;'"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,9 +54,12 @@ const CAROUSEL_LIST = [
   },
 ];
 
+import BgAnimation from '@/components/common/BgAnimation';
+
 export default {
   name: "Home",
   components: {
+    BgAnimation
   },
   data: () => ({
     CAROUSEL_LIST

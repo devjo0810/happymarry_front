@@ -39,5 +39,4 @@ yarn dev
 ## App running at
 http://localhost:3000
 
-## Live Demo
-http://3.35.84.38
+## [Live Demo](http://3.35.84.38){: target="_blank"}

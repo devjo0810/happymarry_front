@@ -3,9 +3,9 @@ const NoticeDetail = () => import(/* webpackChunkName: "notice" */ '@/pages/noti
 
 export default [
     {
-        path: '/notice', name: 'Notice', component: Notice, meta: {layout: 'No'}
+        path: '/notice', name: 'Notice', component: Notice, meta: {layout: 'Home'}
     },
     {
-        path: '/notice/:id(\\d+)', name: 'NoticeDetail', component: NoticeDetail, meta: {layout: 'No'}
+        path: '/notice/:id(\\d+)', name: 'NoticeDetail', component: NoticeDetail, meta: {layout: 'Home'}
     },
 ]

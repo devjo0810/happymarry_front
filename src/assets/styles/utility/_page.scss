@@ -20,6 +20,25 @@
     }
 }
 
+.notice-page {
+    margin-top: $header-height;
+    width: 100%;
+    .notice-wrap {
+        padding: {
+            top: 5vh;
+            bottom: 5vh;
+        }
+        .title {
+            margin-bottom: 2vh;
+        }
+        .notice-table {
+            tbody tr{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 .login-page,
 .signup-page {
     @include flex-center;

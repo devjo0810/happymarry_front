@@ -57,7 +57,7 @@ const CAROUSEL_LIST = [
 import BgAnimation from '@/components/common/BgAnimation';
 
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {
     BgAnimation
   },

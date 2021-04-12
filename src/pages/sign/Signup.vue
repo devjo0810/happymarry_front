@@ -108,7 +108,7 @@ import { isEmail, isPassword, isTel, isNick } from '@/utils/util.js';
 import BgAnimation from '@/components/common/BgAnimation';
 
 export default {
-  name: "Signup",
+  name: "SignupPage",
   components: {
     BgAnimation
   },

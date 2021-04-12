@@ -48,7 +48,7 @@ import { getLocalStorage, setLocalStorage, delLocalStorage } from '@/utils/cooki
 import BgAnimation from '@/components/common/BgAnimation';
 
 export default {
-  name: "Login",
+  name: "LoginPage",
   components: {
     BgAnimation
   },

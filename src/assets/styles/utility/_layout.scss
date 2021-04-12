@@ -55,6 +55,11 @@
                         transition: 0.3s;
                     }
                 }
+                .menu {
+                    width: 45px;
+                    height: 45px;
+                    font-size: $icon-size;
+                }
             }
         }
     }

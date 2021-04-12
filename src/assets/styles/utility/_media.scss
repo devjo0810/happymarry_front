@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+    .home-layout {
+        .home-header {
+            transition: 0.3s ease;
+            &.show {
+                height: 300px;
+            }
+        }
+    }
+}

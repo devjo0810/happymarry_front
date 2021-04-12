@@ -18,5 +18,22 @@ Vue.config.productionTip = false;
 new Vue({
     router,
     store,
+    data: () => ({
+        wWidth: 0,
+        wHeight: 0
+    }),
+    methods: {
+        windowResizeHandler() {
+            this.wWidth = window.innerWidth;
+            this.wHeight = window.innerHeight;
+        }
+    },
+    mounted() {
+        window.addEventListener("resize", this.windowResizeHandler);
+        this.windowResizeHandler();
+    },
+    beforeDestroy() {
+        window.removeEventListener("resize", this.windowResizeHandler);
+    },
     render: (h) => h(App),
 }).$mount("#app");

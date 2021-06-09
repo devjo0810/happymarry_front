@@ -1,0 +1,45 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.iconTheme": "vscode-icons",
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "[jsonc]": {
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "eslint.validate": [
+        {
+          "language": "vue",
+          "autoFix": true
+        },
+        {
+          "language": "javascript",
+          "autoFix": true
+        },
+        {
+          "language": "javascriptreact",
+          "autoFix": true
+        },
+        {
+          "language": "typescript",
+          "autoFix": true
+        },
+        {
+          "language": "typescriptreact",
+          "autoFix": true
+        }
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    // don't format on save
+    "editor.formatOnSave": false,
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "explorer.confirmDragAndDrop": false,
+}

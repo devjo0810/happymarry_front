@@ -28,7 +28,9 @@
             required
             @keydown.enter="signup"
           ></b-form-input>
-          <b-form-text>* 특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내</b-form-text>
+          <b-form-text
+            >* 특수문자 / 문자 / 숫자 포함 형태의 8~15자리 이내</b-form-text
+          >
           <p class="err-msg" v-if="pwdError">{{ pwdError }}</p>
         </b-form-group>
         <b-form-group label="비밀번호 재입력" label-for="input-re-password">
@@ -87,14 +89,14 @@
             required
             @keydown.enter="signup"
           ></b-form-input>
-          <b-form-text>* 특수문자(_, -) / 문자 / 숫자 포함 형태의 3~10자리 이내</b-form-text>
+          <b-form-text
+            >* 특수문자(_, -) / 문자 / 숫자 포함 형태의 3~10자리
+            이내</b-form-text
+          >
           <p class="err-msg" v-if="nickError">{{ nickError }}</p>
         </b-form-group>
         <div class="btn-wrap">
-          <b-button
-            variant="primary"
-            class="block"
-            @click="signup"
+          <b-button variant="primary" class="block" @click="signup"
             >SIGNUP</b-button
           >
         </div>
@@ -104,81 +106,87 @@
   </div>
 </template>
 <script>
-import { isEmail, isPassword, isTel, isNick } from '@/utils/util.js';
-import BgAnimation from '@/components/common/BgAnimation';
+import { isEmail, isPassword, isTel, isNick } from "@/utils/util.js";
+import BgAnimation from "@/components/common/BgAnimation";
 
 export default {
   name: "SignupPage",
   components: {
-    BgAnimation
+    BgAnimation,
   },
   data: () => ({
-      email: '',
-      password: '', rePwd: '',
-      tel1: '010', tel2: '', tel3: '',
-      nick: '',
-      numReg: /^\d/g,
-      telOptions: [
-        {value: '010', text: '010'},
-        {value: '011', text: '011'},
-        {value: '012', text: '012'},
-        {value: '017', text: '017'},
-        {value: '019', text: '019'},
-      ],
-      emailError: null, pwdError: null, rePwdError: null,
-      telError: null, nickError: null
+    email: "",
+    password: "",
+    rePwd: "",
+    tel1: "010",
+    tel2: "",
+    tel3: "",
+    nick: "",
+    numReg: /^\d/g,
+    telOptions: [
+      { value: "010", text: "010" },
+      { value: "011", text: "011" },
+      { value: "012", text: "012" },
+      { value: "017", text: "017" },
+      { value: "019", text: "019" },
+    ],
+    emailError: null,
+    pwdError: null,
+    rePwdError: null,
+    telError: null,
+    nickError: null,
   }),
   computed: {
-      tel() {
-          const { tel1, tel2, tel3 } = this;
-          return `${tel1}-${tel2}-${tel3}`;
-      }
+    tel() {
+      const { tel1, tel2, tel3 } = this;
+      return `${tel1}-${tel2}-${tel3}`;
+    },
   },
   methods: {
-      signup() {
-        this.clearErrMsg();
-        const {email, password, rePwd, tel, nick} = this;
-        if(!email) {
-          this.emailError = '이메일을 입력해주세요.';
-          return;
-        }
-        if(!isEmail(email)) {
-          this.emailError = '이메일 형식이 올바르지 않습니다.';
-          return;
-        }
-        if(!password) {
-          this.pwdError = '비밀번호를 입력해주세요.';
-          return;
-        }
-        if(!isPassword(password)) {
-          this.pwdError = '비밀번호 형식이 올바르지 않습니다.';
-          return;
-        }
-        if(password !== rePwd) {
-          this.rePwdError = '비밀번호가 일치하지 않습니다.';
-          return;
-        }
-        if(!isTel(tel)) {
-          this.telError = '전화번호 형식이 올바르지 않습니다.';
-          return;
-        }
-        if(!isNick(nick)) {
-          this.nickError = '닉네임 형식이 올바르지 않습니다.';
-          return;
-        }
-        // email check
-        // nick check
-      },
-      clearErrMsg() {
-        this.emailError = null;
-        this.pwdError = null;
-        this.rePwdError = null;
-        this.telError = null;
-        this.nickError = null;
-      },
-      onNumberHandler(telIdx) {
-        this[telIdx] = this[telIdx].replace(/[^0-9]/g, '');
+    signup() {
+      this.clearErrMsg();
+      const { email, password, rePwd, tel, nick } = this;
+      if (!email) {
+        this.emailError = "이메일을 입력해주세요.";
+        return;
       }
-  }
+      if (!isEmail(email)) {
+        this.emailError = "이메일 형식이 올바르지 않습니다.";
+        return;
+      }
+      if (!password) {
+        this.pwdError = "비밀번호를 입력해주세요.";
+        return;
+      }
+      if (!isPassword(password)) {
+        this.pwdError = "비밀번호 형식이 올바르지 않습니다.";
+        return;
+      }
+      if (password !== rePwd) {
+        this.rePwdError = "비밀번호가 일치하지 않습니다.";
+        return;
+      }
+      if (!isTel(tel)) {
+        this.telError = "전화번호 형식이 올바르지 않습니다.";
+        return;
+      }
+      if (!isNick(nick)) {
+        this.nickError = "닉네임 형식이 올바르지 않습니다.";
+        return;
+      }
+      // email check
+      // nick check
+    },
+    clearErrMsg() {
+      this.emailError = null;
+      this.pwdError = null;
+      this.rePwdError = null;
+      this.telError = null;
+      this.nickError = null;
+    },
+    onNumberHandler(telIdx) {
+      this[telIdx] = this[telIdx].replace(/[^0-9]/g, "");
+    },
+  },
 };
 </script>

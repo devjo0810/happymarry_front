@@ -38,31 +38,31 @@
 <script>
 const CAROUSEL_LIST = [
   {
-    caption: 'First Slide',
-    text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-    src: require('@/assets/images/carousel1.jpg')
+    caption: "First Slide",
+    text: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+    src: require("@/assets/images/carousel1.jpg"),
   },
   {
-    caption: 'Second slide',
-    text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-    src: require('@/assets/images/carousel2.jpg')
+    caption: "Second slide",
+    text: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+    src: require("@/assets/images/carousel2.jpg"),
   },
   {
-    caption: 'Third Slide',
-    text: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-    src: require('@/assets/images/carousel3.jpg')
+    caption: "Third Slide",
+    text: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+    src: require("@/assets/images/carousel3.jpg"),
   },
 ];
 
-import BgAnimation from '@/components/common/BgAnimation';
+import BgAnimation from "@/components/common/BgAnimation";
 
 export default {
   name: "HomePage",
   components: {
-    BgAnimation
+    BgAnimation,
   },
   data: () => ({
-    CAROUSEL_LIST
-  })
+    CAROUSEL_LIST,
+  }),
 };
 </script>

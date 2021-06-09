@@ -2,9 +2,9 @@
   <div class="login-page">
     <div class="wrap">
       <div class="title">
-          <router-link to="/" >
-            <img src="@/assets/images/only_logo.png" alt="logo" />
-          </router-link>
+        <router-link to="/">
+          <img src="@/assets/images/only_logo.png" alt="logo" />
+        </router-link>
         <h4>로그인</h4>
       </div>
       <b-form class="login-form">
@@ -32,7 +32,9 @@
         </b-form-group>
         <b-form-checkbox v-model="isRemember">Remember Email</b-form-checkbox>
         <div class="btn-wrap">
-          <b-button variant="primary" class="block" @click="login">LOGIN</b-button>
+          <b-button variant="primary" class="block" @click="login"
+            >LOGIN</b-button
+          >
           <router-link to="/signup">
             <b-button variant="info" class="block">SIGNUP</b-button>
           </router-link>
@@ -43,14 +45,18 @@
   </div>
 </template>
 <script>
-import { isEmail } from '@/utils/util';
-import { getLocalStorage, setLocalStorage, delLocalStorage } from '@/utils/cookies';
-import BgAnimation from '@/components/common/BgAnimation';
+import { isEmail } from "@/utils/util";
+import {
+  getLocalStorage,
+  setLocalStorage,
+  delLocalStorage,
+} from "@/utils/cookies";
+import BgAnimation from "@/components/common/BgAnimation";
 
 export default {
   name: "LoginPage",
   components: {
-    BgAnimation
+    BgAnimation,
   },
   data: () => ({
     email: "",
@@ -61,8 +67,8 @@ export default {
   }),
   methods: {
     init() {
-      const localEmail = getLocalStorage('email');
-      if(localEmail) {
+      const localEmail = getLocalStorage("email");
+      if (localEmail) {
         this.email = localEmail;
         this.isRemember = true;
       }
@@ -74,27 +80,22 @@ export default {
     login() {
       this.clearErrMsg();
       const { email, password, isRemember } = this;
-      if(!email) {
-        this.emailError = '이메일을 입력해주세요.';
+      if (!email) {
+        this.emailError = "이메일을 입력해주세요.";
         return;
       }
-      if(!isEmail(email)) {
-        this.emailError = '이메일 형식이 올바르지 않습니다.';
+      if (!isEmail(email)) {
+        this.emailError = "이메일 형식이 올바르지 않습니다.";
         return;
       }
-      if(!password) {
-        this.pwdError = '비밀번호를 입력해주세요.';
+      if (!password) {
+        this.pwdError = "비밀번호를 입력해주세요.";
         return;
       }
-      if(isRemember) setLocalStorage('email', email);
-      else delLocalStorage('email');
+      if (isRemember) setLocalStorage("email", email);
+      else delLocalStorage("email");
 
-      this.$spinStart();
-      setTimeout(() => {
-        this.$spinEnd();
-      }, 3000);
-      this.$alert('로그인 성공')
-      .then((flag) => {
+      this.$alert("로그인 성공").then(flag => {
         console.log(flag);
       });
     },

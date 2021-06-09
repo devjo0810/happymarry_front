@@ -1,3 +1,3 @@
-import { axiosGet, axiosPost } from "../config";
+// import { axiosGet, axiosPost } from "../config";
 
-const baseUrl = '/api/user';
+// const baseUrl = "/api/user";

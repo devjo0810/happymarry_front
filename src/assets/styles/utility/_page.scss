@@ -32,7 +32,7 @@
             margin-bottom: 2vh;
         }
         .notice-table {
-            tbody tr{
+            tbody tr {
                 cursor: pointer;
             }
         }
@@ -90,8 +90,8 @@
         }
     }
 }
-// Sign Page END
 
+// Sign Page END
 // Invitation Page START
 .invitation-select-page {
     display: flex;
@@ -119,13 +119,11 @@
         flex-direction: column;
         width: 420px;
         padding: 15px;
-
         .logo {
             width: 160px;
             height: auto;
             margin-bottom: 15px;
         }
-
         .btn {
             margin-top: 15px;
             width: 320px;
@@ -133,34 +131,71 @@
         }
     }
 }
+
 .invitation-create-page {
     display: flex;
     width: 100%;
     min-width: $page-min-width;
     height: 100%;
     background-color: #eee;
-    .left-section{
-        @include flex-center;
+    .left-section {
         flex-direction: column;
         width: calc(100% - 420px);
         height: 100%;
+        padding: 5rem;
+        .tab-nav {
+            height: 30px;
+            .nav-item {
+                .nav-link {
+                    border-color: #dee2e6;
+                    transition: all ease 0.4s;
+                    &:not(.active):hover {
+                        background-color: #BBBBBB;
+                    }
+                    &.active {
+                        border-bottom-color: transparent;
+                    }
+                }
+            }
+        }
     }
-    .right-section{
-        @include flex-center;
-        flex-direction: column;
-        width: 420px;
-        padding: 15px;
+    .tab-detail {
+        height: calc(100% - 30px);
+        border-left: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        color: #495057;
+        background-color: #fff;
+        padding: 2rem;
+        .compo-wrap {
+            @include flex-start;
+            * {
+                @include list-margin-right(10px);
+                cursor: pointer;
+            }
+        }
     }
 }
-// Invitiation Page END
 
+.right-section {
+    @include flex-center;
+    flex-direction: column;
+    width: 420px;
+    padding: 15px;
+    .btn {
+        margin-top: 15px;
+        width: 320px;
+        height: 38px;
+    }
+}
+
+// Invitiation Page END
 .notfound-page {
     @include flex-center;
     flex-direction: column;
     width: 100%;
     height: 100%;
     background-color: #eee;
-
     .btn-wrap {
         margin-top: 10px;
         width: 320px;

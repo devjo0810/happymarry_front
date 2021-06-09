@@ -3,6 +3,15 @@
     <component :is="layout">
       <router-view />
     </component>
+    <div class="hide">
+      <input type="file" accept="image/jpeg, image/png" id="input-one-img" />
+      <input
+        type="file"
+        accept="image/jpeg, image/png"
+        id="input-multi-img"
+        multiple
+      />
+    </div>
   </div>
 </template>
 <script>

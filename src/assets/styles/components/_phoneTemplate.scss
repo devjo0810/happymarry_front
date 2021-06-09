@@ -1,0 +1,25 @@
+.phone-template {
+  position: relative;
+  display: flex;
+  width: 335px;
+  height: 670px;
+
+  .phone-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  .component-wrap {
+    position: absolute;
+    top: 74px;
+    left: 19px;
+    z-index: 2;
+    width: 296px;
+    height: 522px;
+    background-color: white;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #BEC0C2;
+  }
+}

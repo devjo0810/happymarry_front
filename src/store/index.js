@@ -8,11 +8,11 @@ import { getCurrentOS } from "@/utils/util";
 Vue.use(Vuex);
 
 const state = {
+  currentOS: getCurrentOS(),
   windowSize: {
     width: 0,
     height: 0,
   },
-  currentOS: getCurrentOS(),
 };
 
 export default new Vuex.Store({

@@ -5,12 +5,6 @@ const Signup = () =>
 
 export default [
   {
-    path: "/",
-    name: "Login",
-    component: Login,
-    meta: { layout: "No" },
-  },
-  {
     path: "/login",
     name: "Login",
     component: Login,

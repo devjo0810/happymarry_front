@@ -3,7 +3,7 @@
     <div class="wrap">
       <div class="title">
         <router-link to="/">
-          <img src="@/assets/images/only_logo.png" alt="logo" />
+          <img :src="logoImg" alt="logo" />
         </router-link>
         <h4>로그인</h4>
       </div>
@@ -52,6 +52,7 @@ import {
   delLocalStorage,
 } from "@/utils/cookies";
 import BgAnimation from "@/components/common/BgAnimation";
+import logoImg from "@/assets/images/only_logo.png";
 
 export default {
   name: "LoginPage",
@@ -64,6 +65,7 @@ export default {
     isRemember: false,
     emailError: null,
     pwdError: null,
+    logoImg,
   }),
   methods: {
     init() {
@@ -98,6 +100,7 @@ export default {
       this.$alert("로그인 성공").then(flag => {
         console.log(flag);
       });
+      this.$router.push("/invitation/select");
     },
   },
   mounted() {

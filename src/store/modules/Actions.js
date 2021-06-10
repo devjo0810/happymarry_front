@@ -6,16 +6,16 @@ export default {
         logger.log("[setWindowSize]", payload);
         commit("setWindowSize", payload);
     },
-    setOneImg() {
-        logger.log("[setOneImg]");
+    selectOneImg() {
+        logger.log("[selectOneImg]");
         const img = document.getElementById("input-one-img");
         img.onchange = function() {
             logger.log("asd");
         };
         img.click();
     },
-    setMultiImg() {
-        logger.log("[setMultiImg]");
+    selectMultiImg() {
+        logger.log("[selectMultiImg]");
         const img = document.getElementById("input-multi-img");
         img.onchange = function() {
             logger.log("asd");

@@ -4,12 +4,18 @@
       <router-view />
     </component>
     <div class="hide">
-      <input type="file" accept="image/jpeg, image/png" id="input-one-img" />
+      <input
+        type="file"
+        accept="image/jpeg, image/png"
+        id="input-one-img"
+        @change="onChangeOneImg"
+      />
       <input
         type="file"
         accept="image/jpeg, image/png"
         id="input-multi-img"
         multiple
+        @change="onChangeMultiImg"
       />
     </div>
   </div>
@@ -39,6 +45,8 @@ export default {
       const height = window.innerHeight;
       this.setWindowSize({ width, height });
     },
+    onChangeOneImg() {},
+    onChangeMultiImg() {},
   },
   mounted() {
     window.addEventListener("resize", this.windowResizeHandler);

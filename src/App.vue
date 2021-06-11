@@ -24,6 +24,7 @@
 import NoLayout from "./layout/NoLayout";
 import HomeLayout from "./layout/home/HomeLayout";
 import AdminLayout from "./layout/admin/AdminLayout";
+import UserLayout from "./layout/user/UserLayout";
 import { mapActions } from "vuex";
 
 export default {
@@ -32,6 +33,7 @@ export default {
     NoLayout,
     HomeLayout,
     AdminLayout,
+    UserLayout,
   },
   computed: {
     layout() {

@@ -1,7 +1,7 @@
 const Login = () =>
-  import(/* webpackChunkName: "login" */ "@/pages/sign/Login.vue");
+  import(/* webpackChunkName: "sign" */ "@/pages/sign/Login.vue");
 const Signup = () =>
-  import(/* webpackChunkName: "signup" */ "@/pages/sign/Signup.vue");
+  import(/* webpackChunkName: "sign" */ "@/pages/sign/Signup.vue");
 
 export default [
   {

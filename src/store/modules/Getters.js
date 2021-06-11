@@ -2,10 +2,13 @@ export default {
   getCurrentOS(state) {
     return state.currentOS;
   },
-  getAppVersion() {
-    return process.env.APP_VERSION;
+  getAppVersion(state) {
+    return state.appVersion;
   },
   getWindowSize(state) {
     return state.windowSize;
+  },
+  getUserSideMenu(state) {
+    return state.userSideMenu;
   },
 };

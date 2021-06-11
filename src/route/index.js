@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeRouter from "./modules/Home";
 import SignRouter from "./modules/Sign";
 import InvitationRouter from "./modules/Invitation";
+import UserRouter from "./modules/User";
 // import AdminRouter from "./modules/Admin";
 // import NoticeRouter from "./modules/Notice";
 import CompoTest from "@/pages/CompoTest";
@@ -14,6 +15,7 @@ const routes = [
   ...HomeRouter,
   ...SignRouter,
   ...InvitationRouter,
+  ...UserRouter,
   {
     path: "/test",
     name: "CompoTestPage",

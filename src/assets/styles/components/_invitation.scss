@@ -16,6 +16,9 @@
     @include flex-center;
     width: 100%;
     height: auto;
+    img {
+        width: 100%;
+    }
     &.template {
         width: 80px;
         border: 1px dashed #495057;

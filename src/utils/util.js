@@ -293,3 +293,13 @@ export const isNick = nick => {
   const regExp = /^[0-9a-zA-Z-_가-힣]{3,10}/i;
   return regExp.test(nick);
 };
+
+export const getSplitString = (data, delimiter = "/") => {
+  return data.split(delimiter);
+};
+
+export const getLastSplitData = (data, delimiter) => {
+  const dataAry = getSplitString(data, delimiter);
+  const lastData = dataAry[dataAry.length - 1];
+  return lastData;
+};

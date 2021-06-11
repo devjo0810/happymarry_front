@@ -29,8 +29,8 @@ export default [
     meta: { auth: true },
   },
   {
-    path: "/invitation/modify/:id(\\d+)",
-    name: "InvitationChoose",
+    path: "/invitation/modify",
+    name: "InvitationModify",
     component: Modify,
     meta: { auth: true },
   },

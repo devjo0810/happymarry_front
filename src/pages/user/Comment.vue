@@ -1,8 +1,8 @@
 <template>
-  <div></div>
+  <div class="user-comment"></div>
 </template>
 <script>
 export default {
-  name: "InvitationModify",
+  name: "UserComment",
 };
 </script>

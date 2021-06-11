@@ -84,3 +84,102 @@
         }
     }
 }
+
+.user-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .user-aside {
+        display: flex;
+        flex-direction: column;
+        width: $user-aside-width;
+        height: 100%;
+        background-color: #fff;
+        padding: 15px 0;
+        box-shadow: -1px 1px 4px #000;
+        .logo-wrap {
+            @include flex-center;
+            width: 100%;
+            padding: 15px;
+            .logo {
+                width: 80px;
+            }
+        }
+        .navbar-wrap {
+            margin: 15px 0;
+            .navbar-nav {
+                .nav-item {
+                    position: relative;
+                    cursor: pointer;
+                    padding: .65rem 2rem;
+                    font-size: 16px;
+                    transition: all ease 0.4s;
+                    .comment-count {
+                        margin-left: 15px;
+                    }
+                    svg {
+                        margin-right: 15px;
+                        &.dashboard {
+                            color: #5e72e4;
+                        }
+                        &.profile {
+                            color: #ffd600;
+                        }
+                        &.comment {
+                            color: #f3a4b5;
+                        }
+                        &.invitation {
+                            color: #11cdef;
+                        }
+                        &.logout {
+                            color: #fb6340;
+                        }
+                    }
+                    &.select::before {
+                        border-left: 3px solid #5e72e4;
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        height: 100%;
+                    }
+                    &:not(.select):hover {
+                        background-color: rgb(216, 216, 216);
+                    }
+                }
+            }
+        }
+        .aside-footer {
+            @include flex-center;
+            margin-top: auto;
+        }
+    }
+    .user-main {
+        width: calc(100% - #{$user-aside-width});
+        .user-header {
+            display: flex;
+            width: 100%;
+            height: $header-height;
+            padding: 0 10px;
+            .left-section {
+                @include flex-start
+            }
+            .right-section {
+                margin-left: auto;
+                button {
+                    width: 46px;
+                    height: 46px;
+                    font-size: 24px;
+                    .logout {
+                        color: #fb6340;
+                    }
+                }
+            }
+        }
+        .user-body {
+            width: 100%;
+            padding: 15px 10px;
+        }
+    }
+}

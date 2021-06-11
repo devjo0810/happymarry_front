@@ -177,19 +177,26 @@
     }
 }
 
-.right-section {
-    @include flex-center;
-    flex-direction: column;
-    width: 420px;
-    padding: 15px;
-    .btn {
-        margin-top: 15px;
-        width: 320px;
-        height: 38px;
-    }
-}
+// .right-section {
+//     @include flex-center;
+//     flex-direction: column;
+//     width: 420px;
+//     padding: 15px;
+//     .btn {
+//         margin-top: 15px;
+//         width: 320px;
+//         height: 38px;
+//     }
+// }
 
 // Invitiation Page END
+// User Page START
+.user-mainboard {
+    @include flex-center;
+    background-color: #eee;
+    min-height: 100%;
+}
+// User Page END
 .notfound-page {
     @include flex-center;
     flex-direction: column;

@@ -9,10 +9,12 @@ Vue.use(Vuex);
 
 const state = {
   currentOS: getCurrentOS(),
+  appVersion: process.env.VUE_APP_VERSION,
   windowSize: {
     width: 0,
     height: 0,
   },
+  userSideMenu: "dashboard",
 };
 
 export default new Vuex.Store({
